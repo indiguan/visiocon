@@ -1,0 +1,23 @@
+:root{
+    --surface-2:#ffffff; --surface-1:#f2f0ea; --surface-0:#eae8e0;
+    --text-primary:#2a2a28; --text-secondary:#5f5e5a; --text-muted:#8a8880;
+    --border:rgba(0,0,0,.10); --border-strong:rgba(0,0,0,.16); --border-stronger:rgba(0,0,0,.28);
+    --radius:12px;
+    --text-accent:#185FA5; --bg-accent:#E6F1FB; --border-accent:#85B7EB; --fill-accent:#378ADD;
+    --text-danger:#A32D2D; --bg-danger:#FCEBEB; --border-danger:#F09595;
+    --text-success:#3B6D11; --bg-success:#EAF3DE; --border-success:#97C459;
+    --text-warning:#854F0B; --bg-warning:#FAEEDA; --border-warning:#EF9F27;
+    --crack:#E24B4A; --spall:#EF9F27; --rebar:#D85A30;
+    --font:"Paperlogy","Malgun Gothic","Apple SD Gothic Neo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --surface-2:#30302e; --surface-1:#262624; --surface-0:#1c1c1a;
+      --text-primary:#e8e6dc; --text-secondary:#b4b2a9; --text-muted:#8a8880;
+      --border:rgba(255,255,255,.12); --border-strong:rgba(255,255,255,.18); --border-stronger:rgba(255,255,255,.30);
+      --text-accent:#85B7EB; --bg-accent:#0C447C; --border-accent:#185FA5;
+      --text-danger:#F09595; --bg-danger:#791F1F; --border-danger:#A32D2D;
+      --text-success:#97C459; --bg-success:#27500A; --border-success:#3B6D11;
+      --text-warning:#EF9F27; --bg-warning:#633806; --border-warning:#854F0B;
+    }
+  }
