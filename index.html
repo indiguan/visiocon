@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VisioCon — 하자진단 영상분석 소프트웨어</title>
+<link rel="icon" href="assets/img/logo.png">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+<h1 class="sr-only">VisioCon — 하자진단 영상분석 소프트웨어. 런처, 신규 점검, 분석 진행, 검수 워크스페이스, 검수 완료 화면을 잇는 인터랙티브 데모.</h1>
+
+<div class="app">
+  <!-- 데모 화면 점프 컨트롤 (발표/편집 전용 · 실제 제품 UI 아님) — 배포 시 이 블록만 삭제하면 됩니다. -->
+  <div class="demobar" role="toolbar" aria-label="데모 화면 점프 컨트롤 (실제 제품 UI 아님)">
+    <span class="dbadge">DEMO</span>
+    <span class="dlbl">화면 점프 · 발표 전용 컨트롤 (실제 제품 UI 아님)</span>
+    <span class="dspacer"></span>
+    <div class="seg" id="seg">
+      <button data-go="launcher" class="on">런처</button>
+      <button data-go="wizard">신규 마법사</button>
+      <button data-go="progress">분석 진행</button>
+      <button data-go="workspace">검수</button>
+      <button data-go="complete">완료</button>
+      <button data-go="reopen">재열기</button>
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="frame">
+      <div style="background: var(--surface-1); border-radius: 12px; padding: 10px;">
+        <div style="position:relative; width:100%; padding-top:56.25%; background: var(--surface-2); border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden;">
+          <!-- 화면 6개는 partials/*.html 에서 런타임 주입됩니다 (js/main.js) -->
+          <div style="position:absolute; inset:0;" id="app"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
