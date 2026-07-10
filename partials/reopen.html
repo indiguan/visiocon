@@ -1,0 +1,74 @@
+<section class="screen" id="scr-reopen">
+
+
+      <div style="display:flex; align-items:center; gap:8px; padding:8px 14px; border-bottom:0.5px solid var(--border); flex-shrink:0;">
+        <i class="ti ti-folder-open" style="font-size:14px; color:var(--text-accent);" aria-hidden="true"></i>
+        <span style="font-size:12px; font-weight:700;">기존 점검 수정</span>
+        <span style="margin-left:auto; font-size:10px; color:var(--text-muted); white-space:nowrap;">.visiocon 불러오기</span>
+      </div>
+
+      <div style="display:flex; align-items:center; justify-content:center; padding:10px 16px; border-bottom:0.5px solid var(--border); flex-shrink:0;">
+        <div class="snode on" id="rn0"><span class="scirc">1</span><span class="slbl">프로젝트 불러오기</span></div>
+        <span class="sconn"></span>
+        <div class="snode" id="rn1"><span class="scirc">2</span><span class="slbl">확인 &amp; 편집 시작</span></div>
+      </div>
+
+      <div style="flex:1; min-height:0; position:relative;">
+
+        <div class="wstep on" id="rw0" style="position:absolute; inset:0; flex-direction:column; align-items:center; justify-content:center; padding:12px 16px;">
+          <div style="width:100%; max-width:480px; display:flex; flex-direction:column; gap:10px;">
+            <div class="dz" id="dzV" data-act="pickV">
+              <i class="ti ti-file-code-2" style="font-size:24px; color:var(--text-accent); flex-shrink:0;" aria-hidden="true"></i>
+              <div style="flex:1; min-width:0;">
+                <div class="dzt" id="dzVt">.visiocon 프로젝트 파일 <span style="color:var(--text-danger);">*필수</span></div>
+                <div class="dzs" id="dzVs">도면 · 결함 크롭 · 결함 데이터 · 검수 이력 · 매핑 포함</div>
+              </div>
+              <i class="ti ti-check" id="dzVchk" style="font-size:16px; color:var(--text-success); display:none;" aria-hidden="true"></i>
+            </div>
+
+            <div class="dz" id="dzZ" data-act="pickZ" style="border-style:dashed;">
+              <i class="ti ti-file-zip" style="font-size:24px; color:var(--text-secondary); flex-shrink:0;" aria-hidden="true"></i>
+              <div style="flex:1; min-width:0;">
+                <div class="dzt" id="dzZt">프레임 패키지 .zip <span style="color:var(--text-muted);">선택</span></div>
+                <div class="dzs">전후 영상 재생 · 신규 핀 근거 프레임 지정 시에만 필요</div>
+              </div>
+              <i class="ti ti-check" id="dzZchk" style="font-size:16px; color:var(--text-success); display:none;" aria-hidden="true"></i>
+            </div>
+
+            <span style="font-size:10px; color:var(--text-muted); display:flex; align-items:center; gap:5px;"><i class="ti ti-info-circle" style="font-size:12px;" aria-hidden="true"></i>원본 4K 영상은 필요하지 않습니다. .visiocon만으로 검수·수정을 이어갈 수 있습니다.</span>
+          </div>
+        </div>
+
+        <div class="wstep" id="rw1" style="position:absolute; inset:0; flex-direction:column; padding:12px 18px;">
+          <div style="font-size:10px; color:var(--text-secondary); margin-bottom:6px; display:flex; align-items:center; gap:5px;"><i class="ti ti-circle-check" style="font-size:12px; color:var(--text-success);" aria-hidden="true"></i>프로젝트를 인식했습니다. 이어서 로컬에서 검수·수정을 진행합니다.</div>
+          <div style="display:grid; grid-template-columns:minmax(0,52fr) minmax(0,48fr); gap:16px; flex:1; min-height:0;">
+            <div>
+              <div style="display:flex; align-items:center; gap:6px; padding:4px 0; font-size:10px; border-bottom:0.5px solid var(--border);"><span style="color:var(--text-secondary); width:66px;">현장</span><span>해운대 ○○리인뷰</span></div>
+              <div style="display:flex; align-items:center; gap:6px; padding:4px 0; font-size:10px; border-bottom:0.5px solid var(--border);"><span style="color:var(--text-secondary); width:66px;">대상</span><span>103동 · 남측 입면</span></div>
+              <div style="display:flex; align-items:center; gap:6px; padding:4px 0; font-size:10px; border-bottom:0.5px solid var(--border);"><span style="color:var(--text-secondary); width:66px;">저장 시점</span><span>2026-07-02 14:52 · 편집본</span></div>
+              <div style="display:flex; align-items:center; gap:6px; padding:4px 0; font-size:10px; border-bottom:0.5px solid var(--border);"><span style="color:var(--text-secondary); width:66px;">결함</span><span>총 52건 · <span style="color:var(--text-success);">검수 34</span> / 미검수 18</span></div>
+              <div style="display:flex; align-items:center; gap:6px; padding:4px 0; font-size:10px;"><span style="color:var(--text-secondary); width:66px;">수동 추가</span><span>M-01 외 1건</span></div>
+            </div>
+            <div style="border-left:0.5px solid var(--border); padding-left:16px;">
+              <div style="font-size:10px; color:var(--text-secondary); margin-bottom:4px;">불러온 구성</div>
+              <div class="chk"><i class="ti ti-check ic" aria-hidden="true"></i>입면 도면</div>
+              <div class="chk"><i class="ti ti-check ic" aria-hidden="true"></i>결함 크롭 52건</div>
+              <div class="chk"><i class="ti ti-check ic" aria-hidden="true"></i>결함 데이터 · 검수 이력</div>
+              <div class="chk"><i class="ti ti-check ic" aria-hidden="true"></i>도면 매핑</div>
+              <div class="chk off" id="chkVideo"><i class="ti ti-minus ic" aria-hidden="true"></i>전후 영상 재생 · 신규 핀 근거</div>
+            </div>
+          </div>
+          <div style="margin-top:8px; font-size:10px; color:var(--text-muted); display:flex; align-items:center; gap:5px;"><i class="ti ti-device-desktop" style="font-size:12px;" aria-hidden="true"></i>검수·도면매핑은 로컬에서 진행되며, 서버 재분석은 필요하지 않습니다.</div>
+        </div>
+
+      </div>
+
+      <div style="border-top:0.5px solid var(--border); padding:9px 16px; display:flex; align-items:center; gap:8px; flex-shrink:0;">
+        <span id="rStepText" style="font-size:10px; color:var(--text-muted); white-space:nowrap;">1 / 2 단계</span>
+        <div style="margin-left:auto; display:flex; gap:8px;">
+          <button id="rPrev" data-act="rNav" data-arg="-1" style="height:27px; padding:0 12px; font-size:10px; white-space:nowrap; color:var(--text-secondary);" disabled><i class="ti ti-arrow-left" style="margin-right:3px" aria-hidden="true"></i>이전</button>
+          <button id="rNext" data-act="rNav" data-arg="1" style="height:27px; padding:0 13px; font-size:10px; white-space:nowrap; border-color:var(--border-accent); color:var(--text-accent);" disabled>다음<i class="ti ti-arrow-right" style="margin-left:3px" aria-hidden="true"></i></button>
+        </div>
+      </div>
+    
+        </section>

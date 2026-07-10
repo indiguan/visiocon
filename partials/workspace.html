@@ -1,0 +1,217 @@
+<section class="screen" id="scr-workspace">
+
+
+      <div class="tabbar" id="tabbar" role="tablist"></div>
+
+      <div class="panels">
+
+        <!-- ===================== REVIEW ===================== -->
+        <section class="panel on" id="panel-review" role="tabpanel" aria-label="결함 검수">
+          <div class="split r">
+            <div class="lcol">
+              <div class="toolrow">
+                <button style="width:30px;height:26px;padding:0;" aria-label="확대" title="확대"><i class="ti ti-zoom-in" aria-hidden="true"></i></button>
+                <button style="width:30px;height:26px;padding:0;" aria-label="축소" title="축소"><i class="ti ti-zoom-out" aria-hidden="true"></i></button>
+                <select id="filterSel" style="height:30px;" aria-label="결함 필터">
+                  <option value="all">전체 결함</option>
+                  <option value="todo">미검수만</option>
+                  <option value="done">검수 완료</option>
+                </select>
+                <button style="height:28px;" data-act="openPin"><i class="ti ti-map-pin-plus" aria-hidden="true"></i>핀 추가</button>
+                <span class="badge b-accent" style="margin-left:auto;" id="counter">검수 34 / 52</span>
+              </div>
+              <div style="flex:1;padding:12px;min-height:0;display:flex;align-items:center;justify-content:center;">
+                <svg width="100%" height="100%" viewBox="0 0 260 196" preserveAspectRatio="xMidYMid meet" role="img"><title>입면 도면 뷰</title><desc>결함 핀과 미촬영 사각지대가 표시된 입면도</desc>
+                  <rect x="24" y="8" width="212" height="166" rx="2" fill="none" stroke="var(--border-stronger)" stroke-width="1"/>
+                  <g stroke="var(--border)" stroke-width="0.5"><line x1="24" y1="26" x2="236" y2="26"/><line x1="24" y1="45" x2="236" y2="45"/><line x1="24" y1="64" x2="236" y2="64"/><line x1="24" y1="83" x2="236" y2="83"/><line x1="24" y1="102" x2="236" y2="102"/><line x1="24" y1="121" x2="236" y2="121"/><line x1="24" y1="140" x2="236" y2="140"/><line x1="24" y1="159" x2="236" y2="159"/><line x1="60" y1="8" x2="60" y2="174"/><line x1="96" y1="8" x2="96" y2="174"/><line x1="132" y1="8" x2="132" y2="174"/><line x1="168" y1="8" x2="168" y2="174"/><line x1="204" y1="8" x2="204" y2="174"/></g>
+                  <text x="6" y="20" font-size="9" fill="var(--text-muted)">10F</text>
+                  <text x="9" y="169" font-size="9" fill="var(--text-muted)">1F</text>
+                  <rect x="168" y="8" width="68" height="37" fill="var(--bg-warning)" stroke="var(--text-warning)" stroke-width="0.5" stroke-dasharray="4 3"/>
+                  <text x="202" y="30" font-size="9" fill="var(--text-warning)" text-anchor="middle">미촬영</text>
+                  <circle cx="44" cy="55" r="3.5" fill="var(--crack)"/><circle cx="114" cy="92" r="3.5" fill="var(--crack)"/><circle cx="152" cy="146" r="3.5" fill="var(--crack)"/><circle cx="192" cy="112" r="3.5" fill="var(--crack)"/>
+                  <circle cx="78" cy="155" r="3.5" fill="var(--spall)"/><circle cx="220" cy="150" r="3.5" fill="var(--spall)"/>
+                  <circle cx="52" cy="121" r="3.5" fill="var(--rebar)"/>
+                  <circle cx="88" cy="46" r="3.5" fill="var(--crack)"/><circle cx="88" cy="46" r="7" fill="none" stroke="var(--text-accent)" stroke-width="2"/>
+                  <text x="99" y="40" font-size="9" fill="var(--text-primary)" font-weight="500">C-17</text>
+                </svg>
+              </div>
+              <div class="legend">
+                <span><span class="dot" style="background:var(--crack);"></span>균열 41</span>
+                <span><span class="dot" style="background:var(--spall);"></span>박리 8</span>
+                <span><span class="dot" style="background:var(--rebar);"></span>철근 3</span>
+                <span><span class="dot" style="background:var(--bg-warning);border:1px dashed var(--text-warning);"></span>사각 1</span>
+              </div>
+            </div>
+
+            <div class="rcol">
+              <div style="flex:1;display:flex;min-height:0;padding:12px 14px 8px;gap:10px;">
+                <div style="display:flex;flex-direction:column;gap:5px;flex-shrink:0;width:80px;">
+                  <button class="stab on" data-act="sSwap" data-arg="0" data-el><i class="ti ti-photo" style="font-size:16px;" aria-hidden="true"></i>결함 크롭</button>
+                  <button class="stab" data-act="sSwap" data-arg="1" data-el><i class="ti ti-player-play" style="font-size:16px;" aria-hidden="true"></i>전후 3초</button>
+                </div>
+                <div style="flex:1;min-width:0;" class="fill">
+                  <div class="sview on" id="sv0" style="position:relative;">
+                    <svg width="100%" height="100%" viewBox="0 0 320 240" preserveAspectRatio="xMidYMid meet" role="img"><title>결함 크롭 4:3</title><desc>균열이 확대된 정지 프레임</desc>
+                      <rect x="0" y="0" width="320" height="240" fill="var(--surface-2)"/>
+                      <path d="M70 60 Q140 110 170 150 T260 205" fill="none" stroke="#993C1D" stroke-width="3" opacity="0.55" stroke-linecap="round"/>
+                      <rect x="120" y="120" width="70" height="46" fill="none" stroke="var(--crack)" stroke-width="1.5" stroke-dasharray="4 3" rx="2"/>
+                      <text x="155" y="112" font-size="11" fill="#993C1D" text-anchor="middle">0.4mm 균열</text>
+                    </svg>
+                    <span style="position:absolute;bottom:8px;right:10px;font-size:10px;background:var(--bg-accent);color:var(--text-accent);padding:2px 8px;border-radius:6px;">프레임 04:12</span>
+                  </div>
+                  <div class="sview" id="sv1" style="flex-direction:column;gap:10px;color:var(--text-muted);">
+                    <i class="ti ti-player-play" style="font-size:36px;" aria-hidden="true"></i>
+                    <span style="font-size:11px;">결함 전후 3초 재생</span>
+                    <div style="width:60%;height:5px;border-radius:3px;background:var(--border);position:relative;"><div style="position:absolute;left:45%;top:-3px;width:12px;height:12px;border-radius:50%;background:var(--text-accent);"></div></div>
+                    <span style="font-size:10px;">04:09 — 04:15</span>
+                  </div>
+                </div>
+              </div>
+
+              <div style="padding:8px 14px;flex-shrink:0;border-top:0.5px solid var(--border);">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:7px;">
+                  <span class="badge b-danger">균열</span>
+                  <span style="font-size:16px;font-weight:700;">C-17</span>
+                  <span style="font-size:10px;color:var(--text-secondary);white-space:nowrap;">17 / 52</span>
+                  <span style="margin-left:auto;font-size:10px;white-space:nowrap;display:flex;align-items:center;gap:5px;"><i class="ti ti-sparkles" style="font-size:13px;color:var(--text-success);" aria-hidden="true"></i>신뢰도 <span style="color:var(--text-success);font-weight:500;">96%</span></span>
+                </div>
+                <table class="meta" style="width:100%;">
+                  <tr>
+                    <td class="lab" style="width:48px;">위치</td><td class="val">8층 W3</td>
+                    <td class="lab" style="width:40px;">폭</td><td class="val" style="color:var(--text-danger);">0.4mm</td>
+                    <td class="lab" style="width:48px;">길이</td><td class="val">1.2m</td>
+                  </tr>
+                  <tr>
+                    <td class="lab">촬영</td><td colspan="5" style="color:var(--text-secondary);">2026-07-02 14:31</td>
+                  </tr>
+                </table>
+              </div>
+
+              <div class="actions">
+                <button style="border-color:var(--border-success);color:var(--text-success);" data-act="judge" data-arg="승인"><i class="ti ti-check" aria-hidden="true"></i>승인 (A)</button>
+                <button data-act="openEdit"><i class="ti ti-edit" aria-hidden="true"></i>수정 (E)</button>
+                <button style="border-color:var(--border-danger);color:var(--text-danger);" data-act="judge" data-arg="기각"><i class="ti ti-x" aria-hidden="true"></i>기각 (X)</button>
+              </div>
+
+              <div class="nav">
+                <span style="font-size:10px;color:var(--text-muted);white-space:nowrap;">결함 이동</span>
+                <button data-act="navDefect" data-arg="-1"><i class="ti ti-arrow-left" aria-hidden="true"></i>이전 결함</button>
+                <button data-act="navDefect" data-arg="1">다음 결함<i class="ti ti-arrow-right" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="progress">
+            <span style="font-size:10px;color:var(--text-secondary);white-space:nowrap;">검수 진행률</span>
+            <div class="bar"><div id="progFill" style="width:65%;"></div></div>
+            <span style="font-size:10px;color:var(--text-secondary);white-space:nowrap;" id="progPct">65%</span>
+            <span class="dimwarn"><i class="ti ti-alert-triangle" style="font-size:13px;" aria-hidden="true"></i>사각지대 1건</span>
+            <button style="height:28px;border-color:var(--border-accent);color:var(--text-accent);" data-act="confirmSign"><i class="ti ti-file-export" aria-hidden="true"></i>확정 및 내보내기</button>
+          </div>
+        </section>
+
+        <!-- ===================== EDIT ===================== -->
+        <section class="panel" id="panel-edit" role="tabpanel" aria-label="편집">
+          <div class="split e">
+            <div class="lcol" style="padding:12px;gap:10px;">
+              <div class="hint"><i class="ti ti-vector" aria-hidden="true"></i> 결함 경계 · 꼭짓점을 끌어 조정</div>
+              <div style="flex:1;min-height:0;" class="fill">
+                <svg width="100%" height="100%" viewBox="0 0 300 236" preserveAspectRatio="xMidYMid meet" role="img"><title>결함 크롭 4:3 편집 뷰</title><desc>AI 경계 폴리곤과 편집 핸들이 표시된 균열 크롭</desc>
+                  <rect x="0" y="0" width="300" height="236" rx="4" fill="var(--surface-2)"/>
+                  <path d="M62 48 Q120 90 148 128 T236 198" fill="none" stroke="#993C1D" stroke-width="3" opacity="0.5" stroke-linecap="round"/>
+                  <polygon points="54,42 70,54 156,124 244,194 228,208 140,136 48,58" fill="var(--crack)" fill-opacity="0.12" stroke="var(--crack)" stroke-width="1.5"/>
+                  <g fill="var(--surface-2)" stroke="var(--crack)" stroke-width="1.5"><rect x="49" y="38" width="10" height="10" rx="1"/><rect x="230" y="194" width="10" height="10" rx="1"/><rect x="141" y="124" width="10" height="10" rx="1"/></g>
+                  <circle cx="146" cy="129" r="15" fill="none" stroke="var(--text-accent)" stroke-width="1" stroke-dasharray="3 2"/>
+                </svg>
+              </div>
+              <div style="display:flex;gap:8px;flex-shrink:0;">
+                <button style="flex:1;height:30px;"><i class="ti ti-plus" aria-hidden="true"></i>꼭짓점</button>
+                <button style="flex:1;height:30px;"><i class="ti ti-trash" aria-hidden="true"></i>삭제</button>
+                <button style="flex:1.3;height:30px;" data-act="markClean"><i class="ti ti-refresh" aria-hidden="true"></i>AI 복원</button>
+              </div>
+            </div>
+            <div class="rcol">
+              <div style="padding:14px 16px;flex:1;min-height:0;">
+                <table style="width:100%;">
+                  <tr><td class="lab" style="padding:7px 0;width:96px;font-size:11px;color:var(--text-secondary);">종류</td><td style="padding:7px 0;"><select style="width:100%;" data-act="markDirty" data-on="change"><option>균열</option><option>박리</option><option>철근노출</option></select></td></tr>
+                  <tr><td style="padding:7px 0;font-size:11px;color:var(--text-secondary);">폭 (mm)</td><td style="padding:7px 0;"><div style="display:flex;gap:10px;align-items:center;"><input value="0.4" style="width:110px;" data-act="markDirty" data-on="input"/><span style="font-size:10px;color:var(--text-muted);white-space:nowrap;">AI 0.3 · 자동 재계산</span></div></td></tr>
+                  <tr><td style="padding:7px 0;font-size:11px;color:var(--text-secondary);">길이 (m)</td><td style="padding:7px 0;"><input value="1.2" style="width:110px;" data-act="markDirty" data-on="input"/></td></tr>
+                  <tr><td style="padding:7px 0;font-size:11px;color:var(--text-secondary);">등급</td><td style="padding:7px 0;"><select style="width:100%;" data-act="markDirty" data-on="change"><option>보수 필요</option><option>경과 관찰</option><option>긴급</option></select></td></tr>
+                  <tr><td style="padding:7px 0;font-size:11px;color:var(--text-secondary);vertical-align:middle;">수정 사유</td><td style="padding:7px 0;"><input placeholder="예: 실측 결과 재측정" style="width:100%;" data-act="markDirty" data-on="input"/></td></tr>
+                </table>
+              </div>
+              <div style="border-top:0.5px solid var(--border);padding:12px 16px;display:flex;gap:10px;flex-shrink:0;">
+                <button style="flex:1;height:30px;color:var(--text-secondary);" data-act="cancelEdit">취소 (Esc)</button>
+                <button style="flex:1.5;height:30px;border-color:var(--border-accent);color:var(--text-accent);" data-act="saveEdit"><i class="ti ti-check" aria-hidden="true"></i>저장 후 검수로</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== PIN ===================== -->
+        <section class="panel" id="panel-pin" role="tabpanel" aria-label="핀 추가">
+          <div class="subbar2">
+            <span class="hint" id="pinHint">결함 위치를 도면에서 클릭하세요</span>
+            <div style="margin-left:auto;display:flex;gap:8px;">
+              <button id="pinPrev" data-act="pinNav" data-arg="-1" style="height:28px;" disabled><i class="ti ti-arrow-left" aria-hidden="true"></i></button>
+              <button id="pinNext" data-act="pinNav" data-arg="1" style="height:28px;">다음<i class="ti ti-arrow-right" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <div style="flex:1;min-height:0;position:relative;">
+
+            <div class="rstep on" id="ps0" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:12px;cursor:crosshair;" data-act="pinNav" data-arg="1">
+              <svg width="70%" height="100%" viewBox="0 0 300 208" preserveAspectRatio="xMidYMid meet" role="img"><title>배치 대기 도면</title><desc>십자선 커서가 활성화된 입면도</desc>
+                <rect x="26" y="8" width="248" height="184" rx="2" fill="none" stroke="var(--border-stronger)" stroke-width="1"/>
+                <g stroke="var(--border)" stroke-width="0.5"><line x1="26" y1="31" x2="274" y2="31"/><line x1="26" y1="54" x2="274" y2="54"/><line x1="26" y1="77" x2="274" y2="77"/><line x1="26" y1="100" x2="274" y2="100"/><line x1="26" y1="123" x2="274" y2="123"/><line x1="26" y1="146" x2="274" y2="146"/><line x1="26" y1="169" x2="274" y2="169"/><line x1="70" y1="8" x2="70" y2="192"/><line x1="122" y1="8" x2="122" y2="192"/><line x1="174" y1="8" x2="174" y2="192"/><line x1="226" y1="8" x2="226" y2="192"/></g>
+                <circle cx="46" cy="62" r="3.5" fill="var(--crack)"/><circle cx="164" cy="158" r="3.5" fill="var(--crack)"/><circle cx="82" cy="124" r="3.5" fill="var(--rebar)"/>
+                <g stroke="var(--text-accent)" stroke-width="0.75" opacity="0.5"><line x1="196" y1="8" x2="196" y2="192"/><line x1="26" y1="92" x2="274" y2="92"/></g>
+                <circle cx="196" cy="92" r="5" fill="none" stroke="var(--text-accent)" stroke-width="1.5"/>
+              </svg>
+            </div>
+
+            <div class="rstep" id="ps1" style="position:absolute;inset:0;display:none;align-items:center;justify-content:center;padding:12px;">
+              <svg width="70%" height="100%" viewBox="0 0 300 208" preserveAspectRatio="xMidYMid meet" role="img"><title>핀 배치 완료 도면</title><desc>새 결함 핀이 강조된 입면도. 위치 8층 W3 자동 인식.</desc>
+                <rect x="26" y="8" width="248" height="184" rx="2" fill="none" stroke="var(--border-stronger)" stroke-width="1"/>
+                <g stroke="var(--border)" stroke-width="0.5"><line x1="26" y1="31" x2="274" y2="31"/><line x1="26" y1="54" x2="274" y2="54"/><line x1="26" y1="77" x2="274" y2="77"/><line x1="26" y1="100" x2="274" y2="100"/><line x1="26" y1="123" x2="274" y2="123"/><line x1="26" y1="146" x2="274" y2="146"/><line x1="26" y1="169" x2="274" y2="169"/><line x1="70" y1="8" x2="70" y2="192"/><line x1="122" y1="8" x2="122" y2="192"/><line x1="174" y1="8" x2="174" y2="192"/><line x1="226" y1="8" x2="226" y2="192"/></g>
+                <circle cx="46" cy="62" r="3.5" fill="var(--crack)"/><circle cx="164" cy="158" r="3.5" fill="var(--crack)"/><circle cx="82" cy="124" r="3.5" fill="var(--rebar)"/>
+                <circle cx="196" cy="92" r="12" fill="var(--bg-accent)" opacity="0.4"/>
+                <path d="M196 80 C189 80 184 85 184 92 C184 100 196 110 196 110 C196 110 208 100 208 92 C208 85 203 80 196 80 Z" fill="var(--text-accent)"/>
+                <circle cx="196" cy="92" r="4" fill="var(--surface-2)"/>
+                <text x="196" y="126" font-size="10" fill="var(--text-accent)" text-anchor="middle" font-weight="500">신규 · 8층 W3</text>
+              </svg>
+            </div>
+
+            <div class="rstep" id="ps2" style="position:absolute;inset:0;display:none;flex-direction:column;">
+              <div style="padding:12px 16px 0;flex-shrink:0;display:flex;align-items:center;gap:10px;">
+                <span class="badge b-accent">신규 결함 · M-01</span>
+                <span style="font-size:10px;color:var(--text-secondary);white-space:nowrap;">수동 추가 · 8층 W3</span>
+              </div>
+              <div style="flex:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:0;">
+                <div style="border-right:0.5px solid var(--border);padding:12px 14px;display:flex;flex-direction:column;gap:10px;min-height:0;">
+                  <div class="hint"><i class="ti ti-photo-search" aria-hidden="true"></i> 근거 프레임 지정</div>
+                  <div style="flex:1;min-height:0;flex-direction:column;color:var(--text-muted);gap:8px;" class="fill">
+                    <i class="ti ti-player-play" style="font-size:30px;" aria-hidden="true"></i><span style="font-size:10px;">영상에서 프레임 선택</span>
+                  </div>
+                  <button style="height:30px;flex-shrink:0;"><i class="ti ti-crop" aria-hidden="true"></i>결함 영역 지정</button>
+                </div>
+                <div style="padding:12px 16px;display:flex;flex-direction:column;min-height:0;">
+                  <table style="width:100%;">
+                    <tr><td class="lab" style="padding:6px 0;width:70px;font-size:11px;color:var(--text-secondary);">종류</td><td style="padding:6px 0;"><select style="width:100%;"><option>선택…</option><option>균열</option><option>박리</option><option>철근노출</option></select></td></tr>
+                    <tr><td style="padding:6px 0;font-size:11px;color:var(--text-secondary);">폭 (mm)</td><td style="padding:6px 0;"><input placeholder="0.0" style="width:100%;"/></td></tr>
+                    <tr><td style="padding:6px 0;font-size:11px;color:var(--text-secondary);">길이 (m)</td><td style="padding:6px 0;"><input placeholder="0.0" style="width:100%;"/></td></tr>
+                    <tr><td style="padding:6px 0;font-size:11px;color:var(--text-secondary);vertical-align:middle;">사유</td><td style="padding:6px 0;"><input placeholder="AI 미탐지 · 육안" style="width:100%;"/></td></tr>
+                  </table>
+                  <div style="margin-top:auto;padding-top:10px;display:flex;gap:8px;">
+                    <button style="flex:1;height:30px;color:var(--text-secondary);" data-act="closeTab" data-arg="pin">취소</button>
+                    <button style="flex:1.4;height:30px;border-color:var(--border-accent);color:var(--text-accent);" data-act="registerPin"><i class="ti ti-check" aria-hidden="true"></i>등록 후 검수로</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+    
+        </section>

@@ -1,0 +1,54 @@
+<section class="screen" id="scr-progress">
+
+
+      <div style="display:flex; align-items:center; gap:8px; padding:8px 14px; border-bottom:0.5px solid var(--border); flex-shrink:0;">
+        <span class="pulse" style="width:9px; height:9px; border-radius:50%; background:var(--fill-accent); flex-shrink:0;"></span>
+        <span style="font-size:12px; font-weight:700;">분석 진행 중</span>
+        <span style="margin-left:auto; font-size:10px; color:var(--text-muted); white-space:nowrap;">해운대 ○○리인뷰 · 103동 남측</span>
+      </div>
+
+      <div style="flex:1; display:grid; grid-template-columns:minmax(0,52fr) minmax(0,48fr); min-height:0;">
+
+        <div style="border-right:0.5px solid var(--border); padding:8px 16px; display:flex; flex-direction:column; justify-content:center; min-height:0;">
+          <div class="strow done" id="st0">
+            <span class="stc"><i class="ti ti-check" aria-hidden="true"></i></span>
+            <div style="flex:1;"><div class="stlab">키프레임 요약본 업로드 <span class="tag loc">로컬 → 서버</span></div></div>
+          </div>
+          <div class="strow act" id="st1">
+            <span class="stc">2</span>
+            <div style="flex:1;">
+              <div class="stlab">결함 추출 <span class="tag srv">서버</span></div>
+              <div class="subbar"><div id="sub1"></div></div>
+              <div style="font-size:10px; color:var(--text-muted); margin-top:3px;" id="txt1">1,062 프레임 중 640</div>
+            </div>
+          </div>
+          <div class="strow" id="st2">
+            <span class="stc">3</span>
+            <div style="flex:1;"><div class="stlab">도면매핑 · 호모그래피 <span class="tag loc">로컬</span></div><div class="subbar" style="display:none;"><div id="sub2"></div></div></div>
+          </div>
+          <div class="strow" id="st3">
+            <span class="stc">4</span>
+            <div style="flex:1;"><div class="stlab">조사망도 · 리포트 생성 <span class="tag loc">로컬</span></div><div class="subbar" style="display:none;"><div id="sub3"></div></div></div>
+          </div>
+        </div>
+
+        <div style="padding:12px 16px; display:flex; flex-direction:column; justify-content:center; min-height:0; gap:12px;">
+          <div style="font-size:10px; color:var(--text-secondary); display:flex; align-items:center; gap:5px;"><i class="ti ti-scan" style="font-size:12px;" aria-hidden="true"></i>실시간 탐지 누적 <span class="tag srv" style="margin-left:2px;">서버</span></div>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px;">
+            <div class="tile"><div class="n" style="color:var(--text-danger);" id="cCrack">28</div><div class="l">균열</div></div>
+            <div class="tile"><div class="n" style="color:var(--text-warning);" id="cSpall">5</div><div class="l">박리</div></div>
+            <div class="tile"><div class="n" style="color:var(--rebar);" id="cRebar">2</div><div class="l">철근노출</div></div>
+          </div>
+          <div style="text-align:center; font-size:10px; color:var(--text-secondary);">누적 <b style="color:var(--text-primary); font-weight:500;" id="cTotal">35</b>건 탐지</div>
+        </div>
+      </div>
+
+      <div style="border-top:0.5px solid var(--border); padding:9px 16px; display:flex; align-items:center; gap:10px; flex-shrink:0;">
+        <span style="font-size:10px; color:var(--text-secondary); white-space:nowrap;" id="ovLabel">전체 진행률</span>
+        <div style="flex:1; height:6px; border-radius:3px; background:var(--surface-1); overflow:hidden;"><div id="ovFill" style="width:0%; height:100%; background:var(--fill-accent); transition:width .5s ease;"></div></div>
+        <span style="font-size:10px; color:var(--text-secondary); white-space:nowrap;" id="ovPct">0%</span>
+        <span style="font-size:10px; color:var(--text-muted); white-space:nowrap;" id="ovTime"><i class="ti ti-clock" style="font-size:11px; margin-right:3px;" aria-hidden="true"></i>경과 0:00 · 남은 약 7분</span>
+        <div id="doneBtnWrap" style="display:none;"><button style="height:26px; padding:0 11px; font-size:10px; white-space:nowrap; border:0.5px solid var(--border-accent); background:transparent; color:var(--text-accent); border-radius:var(--radius); cursor:pointer; display:inline-flex; align-items:center;" data-go="workspace"><i class="ti ti-arrow-right" style="margin-right:4px" aria-hidden="true"></i>검수 시작</button></div>
+      </div>
+    
+        </section>

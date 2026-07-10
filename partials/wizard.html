@@ -1,0 +1,108 @@
+<section class="screen" id="scr-wizard">
+
+
+      <!-- 헤더: 크롬 축소 (아이콘 17→14, 제목 14→12, 부제 11→10) -->
+      <div style="display:flex; align-items:center; gap:8px; padding:8px 14px; border-bottom:0.5px solid var(--border); flex-shrink:0;">
+        <i class="ti ti-clipboard-plus" style="font-size:14px; color:var(--text-accent);" aria-hidden="true"></i>
+        <span style="font-size:12px; font-weight:700;">신규 점검 시작</span>
+        <span id="siteHdr" style="margin-left:auto; font-size:10px; color:var(--text-muted); white-space:nowrap;"></span>
+      </div>
+
+      <!-- 단계 인디케이터: 유지 -->
+      <div style="display:flex; align-items:center; padding:10px 16px; border-bottom:0.5px solid var(--border); flex-shrink:0;">
+        <div class="snode on" id="sn0"><span class="scirc">1</span><span class="slbl">현장 정보</span></div>
+        <span class="sconn"></span>
+        <div class="snode" id="sn1"><span class="scirc">2</span><span class="slbl">도면 등록</span></div>
+        <span class="sconn"></span>
+        <div class="snode" id="sn2"><span class="scirc">3</span><span class="slbl">영상 등록</span></div>
+        <span class="sconn"></span>
+        <div class="snode" id="sn3"><span class="scirc">4</span><span class="slbl">확인 &amp; 시작</span></div>
+      </div>
+
+      <div style="flex:1; min-height:0; position:relative;">
+
+        <!-- STEP 1 -->
+        <div class="wstep on" id="w0" style="position:absolute; inset:0; flex-direction:column; align-items:center; padding:14px 16px; overflow:auto;">
+          <div style="width:100%; max-width:460px; display:flex; flex-direction:column; gap:12px;">
+            <div class="field"><span class="flab">현장명</span><input id="siteInput" placeholder="예: 해운대 ○○리인뷰" data-act="syncSite" data-on="input" data-pass="value"/></div>
+            <div class="field"><span class="flab">대상 동</span><input placeholder="예: 103동" style="width:160px;"/></div>
+            <div class="field"><span class="flab">점검 입면 (방위)</span>
+              <div style="display:flex; gap:6px;">
+                <button class="chip" data-toggle="on">동</button>
+                <button class="chip" data-toggle="on">서</button>
+                <button class="chip on" data-toggle="on">남</button>
+                <button class="chip" data-toggle="on">북</button>
+              </div>
+            </div>
+            <div class="field"><span class="flab">점검 유형</span>
+              <select><option>하자진단</option><option>정기안전점검</option><option>정밀안전점검</option></select>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2 : 도면 등록 (드롭존 '유지') -->
+        <div class="wstep" id="w1" style="position:absolute; inset:0; flex-direction:column; align-items:center; padding:14px 16px;">
+          <div style="width:100%; max-width:480px; display:flex; flex-direction:column; gap:12px;">
+            <!-- 드롭존: 유지 (박스/아이콘 26px/본문 12px 그대로) -->
+            <div style="border:1px dashed var(--border-stronger); border-radius:12px; padding:20px; display:flex; flex-direction:column; align-items:center; gap:6px; color:var(--text-secondary); cursor:pointer;">
+              <i class="ti ti-file-upload" style="font-size:26px; color:var(--text-accent);" aria-hidden="true"></i>
+              <span style="font-size:12px;">입면도 파일을 끌어다 놓거나 클릭해 선택</span>
+              <div style="display:flex; gap:6px; margin-top:4px;"><span class="fmt">DWG</span><span class="fmt">DXF</span><span class="fmt">PDF</span><span class="fmt">PNG</span></div>
+            </div>
+            <!-- 업로드된 파일 행: 크롬 축소 (파일명 12→11, 용량 11→10, 아이콘 16→14) -->
+            <div style="display:flex; align-items:center; gap:8px; padding:8px 10px; border:0.5px solid var(--border); border-radius:var(--radius); font-size:11px;">
+              <i class="ti ti-file-type-pdf" style="font-size:14px; color:var(--text-secondary);" aria-hidden="true"></i>
+              <span>103동_남측_입면도.pdf</span>
+              <span style="color:var(--text-muted); font-size:10px;">1.4 MB</span>
+              <i class="ti ti-check" style="margin-left:auto; font-size:14px; color:var(--text-success);" aria-hidden="true"></i>
+              <i class="ti ti-x" style="font-size:14px; color:var(--text-muted); cursor:pointer;" aria-label="파일 제거"></i>
+            </div>
+            <span style="font-size:10px; color:var(--text-muted);">입면(방위)별로 도면을 각각 등록할 수 있습니다.</span>
+          </div>
+        </div>
+
+        <!-- STEP 3 : 영상 등록 -->
+        <div class="wstep" id="w2" style="position:absolute; inset:0; flex-direction:column; padding:12px 18px;">
+          <div style="font-size:10px; color:var(--text-secondary); margin-bottom:4px; display:flex; align-items:center; gap:5px;"><i class="ti ti-device-desktop" style="font-size:12px;" aria-hidden="true"></i>원본은 로컬에 보관하고, 경량 프레임 패키지만 업로드합니다.</div>
+          <div style="flex:1; min-height:0; overflow:auto;">
+            <div class="srow"><span class="k"><i class="ti ti-video" aria-hidden="true"></i>원본 영상</span><span class="v" style="color:var(--text-secondary);">남측_비행_4K.MP4 · 42.3 GB · 1시간 28분</span></div>
+            <div class="srow"><span class="k"><i class="ti ti-filter" aria-hidden="true"></i>로컬 프레임 추출</span><span class="v">3,140 → <span style="color:var(--text-success); font-weight:500;">1,062 프레임</span> (품질 필터) · 3.1 GB</span></div>
+            <div class="srow"><span class="k"><i class="ti ti-map-pin" aria-hidden="true"></i>드론 메타데이터</span><span class="v">GPS · 짐벌 각도 자동 인식 <span style="color:var(--text-muted);">(DJI)</span></span></div>
+            <div class="srow"><span class="k"><i class="ti ti-shield-check" aria-hidden="true"></i>무결성</span><span class="v">SHA-256 해시 기록됨</span></div>
+            <div class="srow"><span class="k" style="color:var(--text-warning);"><i class="ti ti-alert-triangle" aria-hidden="true"></i>사각지대 점검</span><span class="v" style="color:var(--text-warning);">미촬영 1곳 감지 · 현장 재촬영 권장</span></div>
+            <!-- 업로드 진행률 바: 유지 (바 자체 원본 크기), 라벨/완료 텍스트만 축소 -->
+            <div class="srow" style="border-bottom:none;"><span class="k"><i class="ti ti-cloud-upload" aria-hidden="true"></i>업로드</span><span class="v" style="display:flex; align-items:center; gap:8px; width:100%;">프레임 패키지 전송<div style="flex:1; max-width:120px; height:5px; border-radius:3px; background:var(--surface-1); overflow:hidden;"><div style="width:100%; height:100%; background:var(--fill-accent);"></div></div><span style="color:var(--text-success); font-size:10px;">완료</span></span></div>
+          </div>
+        </div>
+
+        <!-- STEP 4 : 확인 & 시작 -->
+        <div class="wstep" id="w3" style="position:absolute; inset:0; flex-direction:column; padding:14px 18px;">
+          <div style="display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:6px 20px;">
+            <div class="srow"><span class="k">현장</span><span class="v" id="siteReview">해운대 ○○리인뷰</span></div>
+            <div class="srow"><span class="k">대상</span><span class="v">103동 · 남측 입면</span></div>
+            <div class="srow"><span class="k">점검 유형</span><span class="v">하자진단</span></div>
+            <div class="srow"><span class="k">도면</span><span class="v">입면도 1건</span></div>
+            <div class="srow"><span class="k">영상</span><span class="v">1,062 프레임 · 3.1 GB</span></div>
+            <div class="srow"><span class="k">메타데이터</span><span class="v" style="color:var(--text-success);">인식 완료</span></div>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px; margin-top:12px;">
+            <span style="font-size:10px; color:var(--text-secondary);">탐지 대상</span>
+            <span class="fmt" style="background:var(--bg-danger); color:var(--text-danger);">균열</span>
+            <span class="fmt" style="background:var(--bg-warning); color:var(--text-warning);">박리</span>
+            <span class="fmt" style="background:var(--surface-1); color:var(--rebar);">철근노출</span>
+          </div>
+          <div style="margin-top:auto; font-size:10px; color:var(--text-muted); display:flex; align-items:center; gap:5px;"><i class="ti ti-clock" style="font-size:11px;" aria-hidden="true"></i>분석에 약 7~10분이 소요되며, 완료 후 검수 화면으로 이동합니다.</div>
+        </div>
+
+      </div>
+
+      <!-- 하단 바: 스텝텍스트 11→10, 버튼 높이 32→27·폰트 12→10·패딩 축소 -->
+      <div style="border-top:0.5px solid var(--border); padding:9px 16px; display:flex; align-items:center; gap:8px; flex-shrink:0;">
+        <span id="wStepText" style="font-size:10px; color:var(--text-muted); white-space:nowrap;">1 / 4 단계</span>
+        <div style="margin-left:auto; display:flex; gap:8px;">
+          <button id="wPrev" data-act="wNav" data-arg="-1" style="height:27px; padding:0 12px; font-size:10px; white-space:nowrap; color:var(--text-secondary);" disabled><i class="ti ti-arrow-left" style="margin-right:3px" aria-hidden="true"></i>이전</button>
+          <button id="wNext" data-act="wNav" data-arg="1" style="height:27px; padding:0 13px; font-size:10px; white-space:nowrap; border-color:var(--border-accent); color:var(--text-accent);">다음<i class="ti ti-arrow-right" style="margin-left:3px" aria-hidden="true"></i></button>
+        </div>
+      </div>
+    
+        </section>
